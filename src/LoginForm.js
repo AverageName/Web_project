@@ -5,7 +5,7 @@ export default class LoginForm extends React.Component {
     render() {
         return (
             <form className="logForm" action="action_page.php">
-                <div class="login">
+                <div className="login">
                     <p><b>Login</b></p>
                     <input type="text" placeholder="Type in your login"/>
                 </div>

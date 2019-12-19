@@ -17,6 +17,26 @@ export default class App extends React.Component {
   };
 
   UpdateStateLog = num => {
+    let sth = "sth"
+
+    fetch('http://127.0.0.1:8000/api/registrate/',{
+      method: "POST",
+      headers:{
+        'Content-Type': 'application/json',
+      },
+      body:JSON.stringify({
+          "login": "Ke",
+          "password": "Lul",
+          "email": "loh@228"
+      })
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((respJson) => {
+      console.log(respJson)
+    })
+
     this.setState({LogForm: num});
   };
 
