@@ -19,15 +19,13 @@ export default class App extends React.Component {
   UpdateStateLog = num => {
     let sth = "sth"
 
-    fetch('http://127.0.0.1:8000/api/registrate/',{
+    fetch('http://127.0.0.1:8000/api/get_user_info/',{
       method: "POST",
       headers:{
         'Content-Type': 'application/json',
       },
       body:JSON.stringify({
-          "login": "Ke",
-          "password": "Lul",
-          "email": "loh@228"
+          "login": "Ke"
       })
     })
     .then((response) => {

@@ -82,3 +82,33 @@ def registrate(request):
     new_user = User(login=login, password=password, email=email)
     new_user.save()
     return JsonResponse({"success": True})
+
+
+@csrf_exempt
+@api_view(["POST"])
+@permission_classes((AllowAny,))
+def get_user_info(request):
+    #print(request.data)
+    json_req = json.load(request)
+    #json_req = request.data
+    login = json_req["login"]
+    try:
+        user = User.objects.filter(login=login).get()
+    except:
+        return JsonResponse({"success": False})
+    filmusers = FilmUser.objects.filter(user__exact=user)
+    films = [(filmuser.rating, filmuser.film) for filmuser in filmusers]
+    resp_films = []
+    for rating, film in films:
+        resp_films.append({"title": film.title,
+                           "description": film.description,
+                           "language": film.language.name,
+                           "rating": rating})
+    resp = JsonResponse({"success": True,
+                         "films": resp_films,
+                         "login": login,
+                         "films_amount": len(films)})
+    # resp["films"] = resp_films
+    resp['Access-Control-Allow-Origin'] = '*'
+    resp["Access-Control-Allow-Headers"] = '*'
+    return resp
