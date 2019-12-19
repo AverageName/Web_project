@@ -1,0 +1,23 @@
+.ProfilePicture {
+    width: 70%;
+    height: auto;
+}
+
+.MainContent {
+    display: flex;
+    flex-direction: row;
+}
+
+.PersonInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.PictureButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+}
