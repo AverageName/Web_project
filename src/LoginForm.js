@@ -11,7 +11,7 @@ export default class LoginForm extends React.Component {
                 </div>
                 <div className="password">
                     <p><b>Password</b></p>
-                    <input type="text" placeholder="Type in your password"/>
+                    <input type="password" placeholder="Type in your password"/>
                 </div>
                 <div className="submit">
                     <button className='submit-button' onClick={() => this.props.isClicked(2)}>Submit</button>
