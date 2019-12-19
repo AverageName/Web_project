@@ -4,12 +4,32 @@
     margin-left: 40%;
     margin-top: 10%;
     background-color: #f4f7f7;
-    /*border: 3px solid gray;*/
     border-radius: 15px;
-    box-shadow: 10px 10px 10px gray;
+    box-shadow: 0px 0px 20px 0px gray;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
+}
+
+input {
+    padding: 0 5%;
+    height: 30px;
+    border: none;
+    box-shadow: 0px 0px 10px 0px lightgray;
+    border-radius: 5px;
+    outline: none;
+}
+
+.submit {
+    width: 40%;
+    height: auto;
+}
+
+.submit-button {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 100%;
 }
 
 .gobackButton {
@@ -17,6 +37,7 @@
     padding: 7px 20px;
 	border-radius: 25px;
     text-decoration: none;
+    border: none;
     color: #FFF;
     background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
     background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
@@ -24,6 +45,7 @@
 }
 
 .gobackButton:hover {
+    cursor: pointer;
     background-image: -webkit-linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
     background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
 }

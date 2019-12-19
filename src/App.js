@@ -22,16 +22,20 @@ export default class App extends React.Component {
 
   render() {
     if (this.state.LogForm == 0) {
-    return (
-      <div className="App">
-        <LogButton isClicked={this.UpdateStateLog}/>
-        <Info/>
-      </div>
-    );
+      return (
+        <div className="App">
+          <div className="header"> 
+            <LogButton isClicked={this.UpdateStateLog}/>
+          </div>
+          <div className="main-block">
+            <Info/>
+          </div>
+        </div>
+      );
     } else if (this.state.LogForm == 1) {
-      return (<LoginForm isClicked={this.UpdateStateLog}/>)
+        return (<LoginForm isClicked={this.UpdateStateLog}/>)
     } else {
-      return(<Account isClicked={this.UpdateStateLog}/>)
+        return(<Account isClicked={this.UpdateStateLog}/>)
     }
   }
 }
