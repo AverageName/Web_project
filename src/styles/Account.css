@@ -1,6 +1,7 @@
 .ProfilePicture {
     width: 70%;
     height: auto;
+    margin-bottom: 50px;
 }
 
 .MainContent {
@@ -18,6 +19,38 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    margin-top: 30px;
     width: 20%;
+}
+
+.WatchedFilms {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* max-width: 80%; */
+}
+
+.about-film {
+    text-align: center;
+    padding: 10px 20px;
+    /* border: 1px solid black; */
+    margin: 1.25%;
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px; 
+    background-color: antiquewhite;
+    box-shadow: 0px 0px 10px 0px gray;
+
+}
+
+.about {
+    color: darkslategrey;
+}
+
+
+.descr:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
