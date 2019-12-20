@@ -1,48 +1,42 @@
 import React from 'react';
 import './styles/logButton.css';
 import logo from './images/auth_logo.png';
-
-
-class LogForm extends React.Component {
-    render() {
-        return (
-            <div>
-                Hello there
-                <button onClick={this.props.CloseLogin}>Close mem</button>
-            </div>
-        )
-    }
-}
-
-class LogForm2 extends React.Component {
-    render() {
-        return (
-            <div className="logIcon">
-                <img src={logo} className="image"/>
-                <span className="login-span" onClick={() => this.props.isClicked(1)}>Login</span>
-            </div>
-        )
-    }
-}
+import Signup from './Signup'
 
 
 export default class LogButton extends React.Component {
-    /*constructor(){
-        super();
-        this.state = {isClicked: false};
+
+    setFunction = (flag) => {
+        if (flag) {
+            this.props.getUserInfo()
+        } else {
+            let page = this.props.isAuthorized ? 'account' : 'auth'
+            this.props.changePage(page)
+        }
     }
 
-    UpdateState(){
-        this.setState({
-            isClicked: !this.state.isClicked
-        });
-    };
-    {(!this.state.isClicked) ? <LogForm2 CloseLogin={this.UpdateState.bind(this)}/> : <LogForm CloseLogin={this.UpdateState.bind(this)}/>}*/
+    exitOrSignup = (isAuth) => {
+        if (isAuth) {
+            this.props.exit()
+        } else {
+            this.props.changePage('reg')
+        }
+    }
 
     render() {
-        
+        let { login } = this.props
+        let { isAuthorized } = this.props
+        let exit = isAuthorized ? 'Log out' : 'Sign up'
         return (
-            <LogForm2 isClicked={this.props.isClicked}/>
-        );
+            <div className="logIcon">
+                <div className='acc-pic' onClick={() => this.setFunction(isAuthorized)}>
+                    <img src={logo} className="image"/>
+                    <span className="login-span">
+                        {login}&nbsp;
+                    </span>
+                </div>
+                <p onClick={() => this.exitOrSignup(isAuthorized)}>{exit}</p>
+            </div>
+        )
     }
 }
