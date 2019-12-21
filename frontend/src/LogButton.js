@@ -34,6 +34,7 @@ export default class LogButton extends React.Component {
                     <span className="login-span">
                         {login}&nbsp;
                     </span>
+                    <a href='/login/vk-oauth2'>VK</a>
                 </div>
                 <p onClick={() => this.exitOrSignup(isAuthorized)}>{exit}</p>
             </div>

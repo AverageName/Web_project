@@ -27,5 +27,7 @@ urlpatterns = [
     path('api/registrate/', registrate),
     path('api/get_user_info/', get_user_info),
     path('api/auth/', auth),
-    path('api/method/', method)
+    path('api/method/', method),
+
+    path('', include('social_django.urls', namespace='social')),
 ]

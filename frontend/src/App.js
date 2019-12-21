@@ -16,7 +16,7 @@ export default class App extends React.Component {
       login: 'Ke',
       films: [],
     //   url: document.location.href + 'api/'
-      url: "http://192.168.0.105:8000" + '/api/'
+      url: "http://192.168.0.102:8000" + '/api/'
   }
   auth = () => {
       let login = document.getElementById('login').value
